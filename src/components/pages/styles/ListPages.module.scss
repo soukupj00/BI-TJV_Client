@@ -1,4 +1,4 @@
-@import "./../../styles/variables";
+@import "../../../styles/variables";
 
 $border: 5px;
 $dark: #333;
@@ -34,6 +34,7 @@ $neon: #33ff00;
 }
 
 .content_table tbody tr {
+  background-color: $white;
   border-bottom: 0.1em solid #dddddd;
 }
 

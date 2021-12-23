@@ -18,6 +18,7 @@ const HomePageContent = () => {
             <div className={classes.hero__content__cta}>
                 <Button to="/addresses">Addresses</Button>
                 <Button to="/fitness_centers">Fitness centers</Button>
+                <Button to="/staff">Staff</Button>
             </div>
         </Fragment>
     );

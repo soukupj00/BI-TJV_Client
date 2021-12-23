@@ -5,7 +5,7 @@
 }
 
 .createContainer {
-  background: url("../../assets/eddie.jpeg") no-repeat;
+  background: url("../../../assets/eddie.jpeg") no-repeat;
   background-size: cover;
   min-height: 90.5vh;
 }
@@ -19,6 +19,13 @@
   font-size: 1.5em;
 
   h2 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.3em;
+  }
+
+  h3 {
+    margin-top: 1em;
     text-align: center;
     font-weight: 800;
     font-size: 1.3em;
@@ -44,6 +51,14 @@
   background: rgb(20, 20, 20, 0.2);
   color: white;
   outline: none;
+
+  select {
+  }
+
+  option {
+    background: rgb(27, 77, 62, 1);
+
+  }
 }
 
 .noBullet {

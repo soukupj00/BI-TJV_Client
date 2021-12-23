@@ -5,14 +5,14 @@ import axios from "axios";
 
 import classes from "../styles/ListPages.module.scss"
 
-const FitnessCenterList = () => {
+const StaffList = () => {
 
-    const [fitnessCenters, setFitnessCenters] = useState([]);
+    const [staff, setStaff] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/fitness_centers')
+        axios.get('http://localhost:8080/staff')
             .then(res => {
-                setFitnessCenters(res.data)
+                setStaff(res.data)
             })
             .catch(err => {
                 //Not in the 200 response range
@@ -22,8 +22,8 @@ const FitnessCenterList = () => {
             })
     }, []);
 
-    function deleteAddress(id) {
-        axios.delete(`http://localhost:8080/fitness_centers/${id}`)
+    function deleteStaff(id) {
+        axios.delete(`http://localhost:8080/staff/${id}`)
             .catch(err => {
                 //Not in the 200 response range
                 console.log(err.data);
@@ -33,14 +33,16 @@ const FitnessCenterList = () => {
         window.location.reload();
     }
 
-    const fitnessCenterList = fitnessCenters.map(fitnessCenter => {
-        return <tr key={fitnessCenter.idFitnessCenter}>
-            <td>{fitnessCenter.name}</td>
-            <td>{fitnessCenter.type}</td>
+    const staffList = staff.map(staffMember => {
+        return <tr key={staffMember.idStaff}>
+            <td>{staffMember.name}</td>
+            <td>{staffMember.personalNumber}</td>
+            <td>{staffMember.language}</td>
+            <td>{staffMember.salary}</td>
             <td>
                 <ButtonGroup>
-                    <Button className={classes.container_button_edit} tag={Link} to={"/fitness_centers/" + fitnessCenter.idFitnessCenter}>Edit</Button>
-                    <Button className={classes.container_button_delete} onClick={() => deleteAddress(fitnessCenter.idFitnessCenter)}>Delete Fitness Center</Button>
+                    <Button className={classes.container_button_edit} tag={Link} to={"/fitness_centers/" + staffMember.idStaff}>Edit</Button>
+                    <Button className={classes.container_button_delete} onClick={() => deleteStaff(staffMember.idStaff)}>Remove Staff</Button>
                 </ButtonGroup>
             </td>
         </tr>
@@ -50,20 +52,22 @@ const FitnessCenterList = () => {
         <Fragment>
             <div className={classes.container}>
                 <div className={classes.container_button}>
-                    <Button className={classes.button} tag={Link} to="/fitness_centers/new">Add Fitness Center</Button>
+                    <Button className={classes.button} tag={Link} to="/staff/new">Add Staff</Button>
                 </div>
 
                 <div className={classes.content_table}>
                     <Table className="mt-4" width="100%">
                         <thead>
                         <tr>
-                            <th width="40%">Name</th>
-                            <th width="30%">Type of Fitness center</th>
-                            <th width="30%">Actions</th>
+                            <th width="25%">Name</th>
+                            <th width="20%">Personal Number</th>
+                            <th width="15%">Language</th>
+                            <th width="20%">Salary</th>
+                            <th width="20%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {fitnessCenterList}
+                        {staffList}
                         </tbody>
                     </Table>
                 </div>
@@ -72,4 +76,4 @@ const FitnessCenterList = () => {
     );
 };
 
-export default FitnessCenterList;
+export default StaffList;

@@ -15,3 +15,16 @@ html, body {
 #root {
   height: 100%;
 }
+
+/**
+ arrows next to field with numbers do not show
+ */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

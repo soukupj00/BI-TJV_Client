@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import useWindowSize from "../../hooks/useWindowSize";
 import Logo from "../../UI/Logo/Logo";
 import Nav from "./Nav/Nav";
-import {CgMenuRight, CgClose} from "react-icons/cg"
+import {CgClose, CgMenuRight} from "react-icons/cg"
 import classes from "./Header.module.scss";
 
 const Header = () => {

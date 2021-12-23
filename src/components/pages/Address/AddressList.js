@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import {Button, ButtonGroup, Table} from 'reactstrap';
 import axios from "axios";
 
-import classes from "../ListPages.module.scss"
+import classes from "../styles/ListPages.module.scss"
 
 const AddressList = () => {
 
@@ -31,7 +31,7 @@ const AddressList = () => {
                 console.log(err.headers);
             })
         window.location.reload();
-    };
+    }
 
     const addressList = addresses.map(address => {
         return <tr key={address.idAddress}>

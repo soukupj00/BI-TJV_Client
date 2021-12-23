@@ -1,4 +1,4 @@
-import mainSVG from  "../../assets/mainSVG"
+import mainSVG from "../../assets/mainSVG"
 import classes from "./Logo.module.scss"
 
 const Logo = () => {

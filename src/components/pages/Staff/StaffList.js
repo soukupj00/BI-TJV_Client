@@ -41,8 +41,12 @@ const StaffList = () => {
             <td>{staffMember.salary}</td>
             <td>
                 <ButtonGroup>
-                    <Button className={classes.container_button_edit} tag={Link} to={"/fitness_centers/" + staffMember.idStaff}>Edit</Button>
-                    <Button className={classes.container_button_delete} onClick={() => deleteStaff(staffMember.idStaff)}>Remove Staff</Button>
+                    <Button className={classes.container_button_edit} tag={Link}
+                            to={"/fitness_centers/" + staffMember.idStaff}>Edit</Button>
+                    <Button className={classes.container_button_add} tag={Link}
+                            to={"/staff/" + staffMember.idStaff + "/add"}>Add to Fitness Center</Button>
+                    <Button className={classes.container_button_delete}
+                            onClick={() => deleteStaff(staffMember.idStaff)}>Remove Staff</Button>
                 </ButtonGroup>
             </td>
         </tr>
@@ -50,26 +54,28 @@ const StaffList = () => {
 
     return (
         <Fragment>
-            <div className={classes.container}>
-                <div className={classes.container_button}>
-                    <Button className={classes.button} tag={Link} to="/staff/new">Add Staff</Button>
-                </div>
+            <div className={classes.background}>
+                <div className={classes.container}>
+                    <div className={classes.container_button}>
+                        <Button className={classes.button} tag={Link} to="/staff/new">Add Staff</Button>
+                    </div>
 
-                <div className={classes.content_table}>
-                    <Table className="mt-4" width="100%">
-                        <thead>
-                        <tr>
-                            <th width="25%">Name</th>
-                            <th width="20%">Personal Number</th>
-                            <th width="15%">Language</th>
-                            <th width="20%">Salary</th>
-                            <th width="20%">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {staffList}
-                        </tbody>
-                    </Table>
+                    <div className={classes.content_table}>
+                        <Table className="mt-4" width="100%">
+                            <thead>
+                            <tr>
+                                <th width="25%">Name</th>
+                                <th width="20%">Personal Number</th>
+                                <th width="15%">Language</th>
+                                <th width="10%">Salary</th>
+                                <th width="30%">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {staffList}
+                            </tbody>
+                        </Table>
+                    </div>
                 </div>
             </div>
         </Fragment>

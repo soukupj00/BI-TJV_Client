@@ -4,6 +4,12 @@ $border: 5px;
 $dark: #333;
 $neon: #33ff00;
 
+.background {
+  background: url("./../../../assets/barbell.jpg") no-repeat;
+  background-size: cover;
+  min-height: 90.5vh;
+}
+
 .container {
   position: relative;
   z-index: 10;
@@ -49,7 +55,8 @@ $neon: #33ff00;
 }
 
 .container_button_edit,
-.container_button_delete {
+.container_button_delete,
+.container_button_add {
   padding: 10px;
   border: 2px solid $black;
   border-radius: 10px;
@@ -65,21 +72,32 @@ $neon: #33ff00;
     background-color: #F6E60C;
     transition: 0.3s ease;
   }
+
+  &:active {
+    color:#fff714;
+    background-color: #000000;
+  }
 }
 
 .container_button_edit {
-  margin-right: 0.2em;
+  margin-left: 1.5em;
+  margin-right: 1em;
   background-color: #33ff00;
 }
 
 .container_button_delete {
-  margin-left: 0.2em;
+  margin-right: 1.5em;
+  margin-left: 1em;
   background-color: crimson;
+}
+
+.container_button_add {
+  background-color: #1b85e2;
 }
 
 .container_button {
   text-align: center;
-  margin: 2em;
+  padding: 2em;
 }
 
 .button {

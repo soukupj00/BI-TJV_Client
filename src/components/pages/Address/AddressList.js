@@ -41,8 +41,10 @@ const AddressList = () => {
             <td>{address.postalCode}</td>
             <td>
                 <ButtonGroup>
-                    <Button className={classes.container_button_edit} tag={Link} to={"/addresses/" + address.idAddress}>Edit</Button>
-                    <Button className={classes.container_button_delete} onClick={() => deleteAddress(address.idAddress)}>Delete Address</Button>
+                    <Button className={classes.container_button_edit} tag={Link}
+                            to={"/addresses/" + address.idAddress}>Edit</Button>
+                    <Button className={classes.container_button_delete}
+                            onClick={() => deleteAddress(address.idAddress)}>Delete Address</Button>
                 </ButtonGroup>
             </td>
         </tr>
@@ -50,26 +52,28 @@ const AddressList = () => {
 
     return (
         <Fragment>
-            <div className={classes.container}>
-                <div className={classes.container_button}>
-                    <Button className={classes.button} tag={Link} to="/addresses/new">Add Address</Button>
-                </div>
+            <div className={classes.background}>
+                <div className={classes.container}>
+                    <div className={classes.container_button}>
+                        <Button className={classes.button} tag={Link} to="/addresses/new">Add Address</Button>
+                    </div>
 
-                <div className={classes.content_table}>
-                    <Table className="mt-4" width="100%">
-                        <thead>
-                        <tr>
-                            <th width="20%">City</th>
-                            <th width="30%">Street</th>
-                            <th width="15%">House number</th>
-                            <th width="10%">Postal code</th>
-                            <th width="25%">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {addressList}
-                        </tbody>
-                    </Table>
+                    <div className={classes.content_table}>
+                        <Table className="mt-4" width="100%">
+                            <thead>
+                            <tr>
+                                <th width="20%">City</th>
+                                <th width="30%">Street</th>
+                                <th width="15%">House number</th>
+                                <th width="10%">Postal code</th>
+                                <th width="25%">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {addressList}
+                            </tbody>
+                        </Table>
+                    </div>
                 </div>
             </div>
         </Fragment>

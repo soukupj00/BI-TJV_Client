@@ -6,7 +6,6 @@ import axios from "axios";
 import classes from "../styles/ListPages.module.scss"
 
 const FitnessCenterList = () => {
-
     const [fitnessCenters, setFitnessCenters] = useState([]);
 
     useEffect(() => {
@@ -22,7 +21,7 @@ const FitnessCenterList = () => {
             })
     }, []);
 
-    function deleteAddress(id) {
+    function deleteFitnessCenter(id) {
         axios.delete(`http://localhost:8080/fitness_centers/${id}`)
             .catch(err => {
                 //Not in the 200 response range
@@ -39,8 +38,11 @@ const FitnessCenterList = () => {
             <td>{fitnessCenter.type}</td>
             <td>
                 <ButtonGroup>
-                    <Button className={classes.container_button_edit} tag={Link} to={"/fitness_centers/" + fitnessCenter.idFitnessCenter}>Edit</Button>
-                    <Button className={classes.container_button_delete} onClick={() => deleteAddress(fitnessCenter.idFitnessCenter)}>Delete Fitness Center</Button>
+                    <Button className={classes.container_button_edit} tag={Link}
+                            to={"/fitness_centers/" + fitnessCenter.idFitnessCenter}>Edit</Button>
+                    <Button className={classes.container_button_delete}
+                            onClick={() => deleteFitnessCenter(fitnessCenter.idFitnessCenter)}>Delete Fitness
+                        Center</Button>
                 </ButtonGroup>
             </td>
         </tr>
@@ -48,24 +50,27 @@ const FitnessCenterList = () => {
 
     return (
         <Fragment>
-            <div className={classes.container}>
-                <div className={classes.container_button}>
-                    <Button className={classes.button} tag={Link} to="/fitness_centers/new">Add Fitness Center</Button>
-                </div>
+            <div className={classes.background}>
+                <div className={classes.container}>
+                    <div className={classes.container_button}>
+                        <Button className={classes.button} tag={Link} to="/fitness_centers/new">Add Fitness
+                            Center</Button>
+                    </div>
 
-                <div className={classes.content_table}>
-                    <Table className="mt-4" width="100%">
-                        <thead>
-                        <tr>
-                            <th width="40%">Name</th>
-                            <th width="30%">Type of Fitness center</th>
-                            <th width="30%">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {fitnessCenterList}
-                        </tbody>
-                    </Table>
+                    <div className={classes.content_table}>
+                        <Table className="mt-4" width="100%">
+                            <thead>
+                            <tr>
+                                <th width="40%">Name</th>
+                                <th width="30%">Type of Fitness center</th>
+                                <th width="30%">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {fitnessCenterList}
+                            </tbody>
+                        </Table>
+                    </div>
                 </div>
             </div>
         </Fragment>

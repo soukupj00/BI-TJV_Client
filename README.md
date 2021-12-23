@@ -2,9 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
 This is a web application, that, sort of, simulates, how a basic server and web page might look for a small gym business.
 
 Web allows users to add: addresses, fitness centers and staff. User can edit and delete each entity.

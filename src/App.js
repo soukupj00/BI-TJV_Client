@@ -22,10 +22,10 @@ function App() {
                     <Route path='/addresses/:id' exact={true} component={AddressEdit}/>
                     <Route path='/fitness_centers' exact={true} component={FitnessCenterList}/>
                     <Route path='/fitness_centers/:id' exact={true} component={FitnessCenterEdit}/>
-                    <Route path='/fitness_centers/staff/:id' exact={true} component={StaffInFitnessCenterList}/>
                     <Route path='/staff/' exact={true} component={StaffList}/>
                     <Route path='/staff/:id' exact={true} component={StaffEdit}/>
                     <Route path='/staff/:id/add' exact={true} component={StaffAddToFC}/>
+                    <Route path='/staff/fitness_center/:id' exact={true} component={StaffInFitnessCenterList}/>
                 </Switch>
             </Fragment>
         </Router>

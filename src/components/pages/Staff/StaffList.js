@@ -42,7 +42,7 @@ const StaffList = () => {
             <td>
                 <ButtonGroup>
                     <Button className={classes.container_button_edit} tag={Link}
-                            to={"/fitness_centers/" + staffMember.idStaff}>Edit</Button>
+                            to={"/staff/" + staffMember.idStaff}>Edit</Button>
                     <Button className={classes.container_button_add} tag={Link}
                             to={"/staff/" + staffMember.idStaff + "/add"}>Add to Fitness Center</Button>
                     <Button className={classes.container_button_delete}

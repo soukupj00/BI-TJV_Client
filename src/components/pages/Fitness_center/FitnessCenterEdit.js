@@ -40,7 +40,7 @@ const AddFitnessCenter = (props) => {
                 console.log(err.headers);
             });
         }
-    });
+    }, []);
 
     function convertType () {
         switch (type) {

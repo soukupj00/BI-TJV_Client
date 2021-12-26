@@ -26,7 +26,7 @@ const StaffEdit = (props) => {
                 console.log(err.headers);
             });
         }
-    });
+    }, []);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -53,6 +53,10 @@ const StaffEdit = (props) => {
                 })
                 .catch(err => {
                     //Not in the 200 response range
+                    if (err?.response?.status === 409) {
+                        alert("Cannot create new staff with personal number, that is already in database. Personal number must be unique.")
+                        return;
+                    }
                     console.log(err.data);
                     console.log(err.status);
                     console.log(err.headers);
@@ -71,6 +75,10 @@ const StaffEdit = (props) => {
                 })
                 .catch(err => {
                     //Not in the 200 response range
+                    if (err?.response?.status === 409) {
+                        alert("Cannot create new staff with personal number, that is already in database. Personal number must be unique.")
+                        return;
+                    }
                     console.log(err.data);
                     console.log(err.status);
                     console.log(err.headers);

@@ -41,7 +41,7 @@ const FitnessCenterList = () => {
                     <Button className={classes.container_button_edit} tag={Link}
                             to={"/fitness_centers/" + fitnessCenter.idFitnessCenter}>Edit</Button>
                     <Button className={classes.container_button_add} tag={Link}
-                            to={"/fitness_centers/staff/" + fitnessCenter.idFitnessCenter}>Staff in Fitness Center</Button>
+                            to={"/staff/fitness_center/" + fitnessCenter.idFitnessCenter}>Staff in Fitness Center</Button>
                     <Button className={classes.container_button_delete}
                             onClick={() => deleteFitnessCenter(fitnessCenter.idFitnessCenter)}>Delete Fitness
                         Center</Button>

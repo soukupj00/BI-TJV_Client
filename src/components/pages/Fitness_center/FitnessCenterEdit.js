@@ -16,7 +16,7 @@ const AddFitnessCenter = (props) => {
     //const types = ['All-purpose', 'Bodybuilding', 'Crossfit', 'Powerlifting', 'Strongman'];
 
     useEffect( () => {
-        axios.get('http://localhost:8080/addresses')
+        axios.get(`http://localhost:8080/addresses`)
             .then(res => {
                 setAddresses(res.data)
             })

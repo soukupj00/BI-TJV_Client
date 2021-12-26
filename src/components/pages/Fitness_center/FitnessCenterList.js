@@ -40,6 +40,8 @@ const FitnessCenterList = () => {
                 <ButtonGroup>
                     <Button className={classes.container_button_edit} tag={Link}
                             to={"/fitness_centers/" + fitnessCenter.idFitnessCenter}>Edit</Button>
+                    <Button className={classes.container_button_add} tag={Link}
+                            to={"/fitness_centers/staff/" + fitnessCenter.idFitnessCenter}>Staff in Fitness Center</Button>
                     <Button className={classes.container_button_delete}
                             onClick={() => deleteFitnessCenter(fitnessCenter.idFitnessCenter)}>Delete Fitness
                         Center</Button>
@@ -61,9 +63,9 @@ const FitnessCenterList = () => {
                         <Table className="mt-4" width="100%">
                             <thead>
                             <tr>
-                                <th width="40%">Name</th>
+                                <th width="30%">Name</th>
                                 <th width="30%">Type of Fitness center</th>
-                                <th width="30%">Actions</th>
+                                <th width="40%">Actions</th>
                             </tr>
                             </thead>
                             <tbody>

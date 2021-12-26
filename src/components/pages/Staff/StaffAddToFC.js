@@ -44,6 +44,9 @@ const StaffAddToFC = (props) => {
 
     return (
         <Fragment>
+            <div className={classes.background}>
+
+
             <div className={classes.container}>
                 <div className={classes.container_button}>
                     <Button className={classes.button} tag={Link} to="/staff">Return to Staff List</Button>
@@ -63,6 +66,7 @@ const StaffAddToFC = (props) => {
                         </tbody>
                     </Table>
                 </div>
+            </div>
             </div>
         </Fragment>
     );
